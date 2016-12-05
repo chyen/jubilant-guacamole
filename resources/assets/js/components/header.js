@@ -1,11 +1,15 @@
-import 'react';
-import 'react-dom';
+import React from 'react';
 
-class Header extends React.Component{
+export default class Header extends React.Component{
   render() {
     return (
-      <div>Header</div>
+      <div className={ "header" }>
+        <div className={ `col-sm-8 ${this.props.className}` }>
+          Header
+        </div>
+        <div className={ 'col-sm-4 profile' }>Profile</div>
+      </div>
     );
   };
 
-};
+}

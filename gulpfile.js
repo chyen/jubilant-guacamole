@@ -1,7 +1,5 @@
 const elixir = require('laravel-elixir');
 
-// require('laravel-elixir-vue-2');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -15,18 +13,17 @@ const elixir = require('laravel-elixir');
 
 elixir(mix => {
   mix.copy('./resources/assets/plugins/font-awesome/fonts', './public/fonts/FontAwesome');
+  mix.copy('./resources/assets/plugins/bootstrap-3.3.7-dist/css', './public/bootstrap/css');
 
   mix.less([
-      './resources/assets/less/templates',
-      './resources/assets/less/custom'
+      './resources/assets/less/*.less'
   ], 'public/css/global.css');
 
-  mix.scripts([
-      './resources/assets/plugins/*/js'
-  ], 'public/js/plugins.js');
+  // mix.scripts([
+  //     './resources/assets/plugins/*/js'
+  // ], 'public/js/plugins.js');
 
   mix.browserify([
-      './resources/assets/js/app.js',
-      './resources/assets/js/components'
+      './resources/assets/js/app.js'
   ], 'public/js/app.js');
 });

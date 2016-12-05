@@ -1,11 +1,23 @@
 import React from 'react';
-import { Header } from './header.js';
+import Header from './header';
+import Content from './content';
+import Footer from './footer';
 
-class App extends React.Component {
+
+export default class App extends React.Component {
   render () {
+    console.log('RENDER');
     return (
-      <div>
-        <Header/>
+      <div className={ 'wrapper' }>
+        <Header
+          className={'header'}
+        />
+        <Content
+          className={'content'}
+        />
+        <Footer
+          className={'footer'}
+        />
       </div>
     );
   }
